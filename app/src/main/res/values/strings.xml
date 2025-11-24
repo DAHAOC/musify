@@ -3,4 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="search">Search</string>
+    <string name="item_playlist_content_descriptor">Playlist cover image</string>
+    <string name="your_library">Tu Biblioteca</string>
 </resources>
