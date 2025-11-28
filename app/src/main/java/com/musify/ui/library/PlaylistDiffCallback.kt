@@ -1,4 +1,4 @@
-package com.musify.ui.home
+package com.musify.ui.library
 
 import androidx.recyclerview.widget.DiffUtil
 import com.musify.model.Playlist

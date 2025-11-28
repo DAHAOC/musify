@@ -1,4 +1,4 @@
-package com.musify.ui.home
+package com.musify.ui.library
 
 import android.view.LayoutInflater
 import android.view.View
