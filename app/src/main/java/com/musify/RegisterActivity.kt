@@ -1,10 +1,9 @@
 package com.musify
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.musify.MainActivity
+import androidx.appcompat.app.AppCompatActivity
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,11 +13,8 @@ class RegisterActivity : AppCompatActivity() {
         val registerButton = findViewById<Button>(R.id.btnRegister)
 
         registerButton.setOnClickListener {
-
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }
-
-
 }
