@@ -1,15 +1,38 @@
+# Android Studio / IntelliJ IDEA files
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+.idea/
+.gradle/
 local.properties
+.DS_Store
+
+# Build / generated files
+/build/
+captures/
+.externalNativeBuild/
+.cxx/
+generated/
+bin/
+obj/
+
+# Log files
+*.log
+
+# IDE-specific configuration files
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Gradle files
+build/
+
+# Temporary / swap files
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Kotlin / Java output
+out/
