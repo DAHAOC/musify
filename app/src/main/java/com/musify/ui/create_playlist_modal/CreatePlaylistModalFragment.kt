@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -19,7 +20,10 @@ class CreatePlaylistModalFragment : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.create_playlist_sheet, container, false)
+        val view = inflater.inflate(R.layout.create_playlist_modal, container, false)
+
+        @Suppress("DEPRECATION") // https://stackoverflow.com/questions/68003131/soft-input-adjust-resize-deprecated-starting-android-30
+        dialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
 
         val editText = view.findViewById<EditText>(R.id.create_playlist_name)
         val createButton = view.findViewById<Button>(R.id.create_playlist_button)
