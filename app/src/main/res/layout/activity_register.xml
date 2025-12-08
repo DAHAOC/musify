@@ -12,7 +12,7 @@
         android:text="@string/sign_up_in_musify"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:padding="24dp" />
+        android:padding="@dimen/page_padding" />
 
     <LinearLayout
         android:id="@+id/loginLayout"
@@ -37,7 +37,7 @@
                 android:id="@+id/username_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_item_margin"
+                android:layout_marginBottom="@dimen/layout_item_margin_medium"
                 android:text="@string/username"
                 android:labelFor="@id/username"
                 style="@style/MusifyBodyText" />
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/password"
-                android:layout_marginBottom="@dimen/activity_item_margin"
+                android:layout_marginBottom="@dimen/layout_item_margin_medium"
                 android:labelFor="@id/password"
                 style="@style/MusifyBodyText" />
 
