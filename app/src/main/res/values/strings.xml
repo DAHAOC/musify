@@ -22,4 +22,6 @@
     <string name="item_playlist_content_descriptor">Imagen de la lista de reproducción</string>
     <string name="set_name_to_playlist">Nombre de la playlist</string>
     <string name="create">Crear</string>
+
+    <string name="remove_bar_content_descriptor">Barra para cerrar el menú</string>
 </resources>

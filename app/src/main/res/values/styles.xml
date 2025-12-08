@@ -8,8 +8,8 @@
         <item name="android:textColor">@color/on_primary</item>
         <item name="android:backgroundTint">@color/primary</item>
         <item name="android:drawableTint">@color/hint</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:paddingEnd">16dp</item>
         <item name="android:textColorHint">@color/hint</item>
@@ -17,7 +17,7 @@
     </style>
 
     <style name="MusifyPrimaryButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:backgroundTint">@color/primary</item>
+        <item name="background">@drawable/primary_button_background</item>
         <item name="android:textColor">@color/on_primary</item>
         <item name="android:paddingTop">6dp</item>
         <item name="android:paddingBottom">6dp</item>
@@ -29,7 +29,7 @@
     </style>
 
     <style name="MusifySecondaryButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:backgroundTint">@color/secondary</item>
+        <item name="background">@drawable/secondary_button_background</item>
         <item name="android:textColor">@color/on_secondary</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
