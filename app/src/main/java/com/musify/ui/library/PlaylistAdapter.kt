@@ -17,9 +17,9 @@ class PlaylistAdapter(
 ) : ListAdapter<PlaylistItem, PlaylistAdapter.PlaylistViewHolder>(PlaylistDiffCallback()) {
 
     inner class PlaylistViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val image: ImageView = itemView.findViewById(R.id.playlistImage)
-        private val title: TextView = itemView.findViewById(R.id.playlistTitle)
-        private val owner: TextView = itemView.findViewById(R.id.playlistOwner)
+        private val image: ImageView = itemView.findViewById(R.id.image)
+        private val title: TextView = itemView.findViewById(R.id.title)
+        private val owner: TextView = itemView.findViewById(R.id.owner)
 
         fun bind(item: PlaylistItem) {
             title.text = item.title

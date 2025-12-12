@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:padding="@dimen/page_padding">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/searchTitle"
         style="@style/MusifyHeaderText"
@@ -16,13 +15,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Search input -->
     <EditText
         android:id="@+id/searchEditText"
         style="@style/MusifyEditText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:autofillHints=""
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="10dp"
@@ -32,13 +29,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchTitle" />
 
-    <!-- Filter buttons -->
     <LinearLayout
         android:id="@+id/filterLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:layout_marginBottom="3dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,12 +57,11 @@
             android:text="@string/users" />
     </LinearLayout>
 
-
-    <!-- RecyclerView results -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

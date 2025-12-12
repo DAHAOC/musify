@@ -25,8 +25,8 @@ class LibraryFragment : Fragment() {
         _binding = FragmentLibraryBinding.inflate(inflater, container, false)
 
         adapter = PlaylistAdapter()
-        binding.recyclerViewHome.adapter = adapter
-        binding.recyclerViewHome.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewPlaylists.adapter = adapter
+        binding.recyclerViewPlaylists.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.playlists.observe(viewLifecycleOwner) { playlists ->
             adapter.submitList(playlists)

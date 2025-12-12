@@ -23,6 +23,7 @@ class SearchFragment : Fragment() {
     private val allResults = listOf(
         SearchItem(
             "Moscow Mule",
+
             "https://i.scdn.co/image/ab67616d0000b27349d694203245f241a1bcaa72",
             SearchType.TRACK
         ), SearchItem(
@@ -61,13 +62,12 @@ class SearchFragment : Fragment() {
         val btnUsers = view.findViewById<MaterialButton>(R.id.btnUsers)
         val searchEditText = view.findViewById<android.widget.EditText>(R.id.searchEditText)
 
-        // Mostrar todos los resultados por defecto
         adapter.updateList(allResults)
 
         fun applyFilter() {
             val query = searchEditText.text.toString().lowercase()
             val filtered = allResults.filter {
-                val matchesQuery = it.name.lowercase().contains(query)
+                val matchesQuery = it.title.lowercase().contains(query)
                 val matchesFilter =
                     (!filterSongs && !filterUsers) || (filterSongs && it.type == SearchType.TRACK) || (filterUsers && it.type == SearchType.USER)
                 matchesQuery && matchesFilter

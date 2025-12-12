@@ -19,8 +19,9 @@ class SearchAdapter(
 ) : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val img: ImageView = view.findViewById(R.id.itemImage)
-        val name: TextView = view.findViewById(R.id.itemName)
+        val img: ImageView = view.findViewById(R.id.image)
+        val title: TextView = view.findViewById(R.id.title)
+        val subtitle: TextView = view.findViewById(R.id.subtitle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,7 +33,7 @@ class SearchAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
 
-        holder.name.text = item.name
+        holder.title.text = item.title
 
         Glide.with(holder.itemView).load(item.imageUrl).centerCrop()
             .placeholder(R.drawable.playlist_placeholder).transform(RoundedCorners(16))

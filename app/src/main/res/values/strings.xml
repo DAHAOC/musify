@@ -26,6 +26,7 @@
     <string name="user_profile_picture">Foto de perfil de usuario</string>
     <string name="user_configuration">Configuración del usuario</string>
 
+    <string name="track">Canción</string>
     <string name="tracks">Canciones</string>
     <string name="add_track">Añadir canción</string>
 
