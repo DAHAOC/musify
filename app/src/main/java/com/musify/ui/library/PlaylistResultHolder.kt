@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.musify.R
-import com.musify.model.PlaylistItem
+import com.musify.model.PlaylistResult
 
-class PlaylistHolder(
-    itemView: View, private val onItemClick: (PlaylistItem) -> Unit
+class PlaylistResultHolder(
+    itemView: View, private val onItemClick: (PlaylistResult) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
     private val playlistTitle: TextView = itemView.findViewById(R.id.title)
     private val playlistOwner: TextView = itemView.findViewById(R.id.owner)
     private val playlistImage: ImageView = itemView.findViewById(R.id.image)
 
-    fun bind(item: PlaylistItem) {
+    fun bind(item: PlaylistResult) {
         playlistTitle.text = item.title
         playlistOwner.text = item.owner
 

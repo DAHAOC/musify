@@ -11,38 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.musify.R
-import com.musify.model.SearchResultItem
 import com.musify.model.SearchResultType
 
 class SearchFragment : Fragment() {
-
-    private lateinit var adapter: SearchAdapter
+    private lateinit var adapter: SearchResultAdapter
     private lateinit var recyclerView: RecyclerView
 
-    // Lista completa de ejemplo
-    private val allResults = listOf(
-        SearchResultItem(
-            "Moscow Mule",
-
-            "https://i.scdn.co/image/ab67616d0000b27349d694203245f241a1bcaa72",
-            SearchResultType.TRACK
-        ), SearchResultItem(
-            "Como Antes",
-            "https://i.scdn.co/image/ab67616d0000b273519266cd05491a5b5bc22d1e",
-            SearchResultType.TRACK
-        ), SearchResultItem("Dua Lipa", "https://picsum.photos/202", SearchResultType.USER), SearchResultItem(
-            "Quevedo",
-            "https://akamai.sscdn.co/uploadfile/letras/fotos/1/c/4/1/1c41718dc8bd31b7bfdc49e4d1d10be8.jpg",
-            SearchResultType.USER
-        ), SearchResultItem(
-            "La Última",
-            "https://cdn-images.dzcdn.net/images/artist/79880cc1b999b15567e332203464c34e/1900x1900-000000-81-0-0.jpg",
-            SearchResultType.TRACK
-        )
-    )
-
-    private var filterSongs = false
-    private var filterUsers = false
+    private var isUserFilterOn: Boolean = false
+    private var isTrackFilterOn: Boolean = false
+    private var currentStringSearch: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -54,42 +31,42 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.searchRecyclerView)
-        adapter = SearchAdapter(mutableListOf())
+
+        adapter = SearchResultAdapter(SearchDataSource.items, { searchResult ->
+
+        })
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        fun updateResults() {
+            adapter.updateList(
+                SearchDataSource.items.filter { searchResult ->
+                    (searchResult.type != SearchResultType.USER || isUserFilterOn) && (searchResult.type != SearchResultType.TRACK || isTrackFilterOn) && searchResult.title.contains(
+                        currentStringSearch, ignoreCase = true
+                    )
+                })
+        }
 
         val btnSongs = view.findViewById<MaterialButton>(R.id.btnSongs)
         val btnUsers = view.findViewById<MaterialButton>(R.id.btnUsers)
         val searchEditText = view.findViewById<android.widget.EditText>(R.id.searchEditText)
 
-        adapter.updateList(allResults)
-
-        fun applyFilter() {
-            val query = searchEditText.text.toString().lowercase()
-            val filtered = allResults.filter {
-                val matchesQuery = it.title.lowercase().contains(query)
-                val matchesFilter =
-                    (!filterSongs && !filterUsers) || (filterSongs && it.type == SearchResultType.TRACK) || (filterUsers && it.type == SearchResultType.USER)
-                matchesQuery && matchesFilter
-            }
-            adapter.updateList(filtered)
-        }
-
         btnSongs.setOnClickListener {
-            filterSongs = !filterSongs
-            applyFilter()
+            isTrackFilterOn = !isTrackFilterOn
+            updateResults()
         }
 
         btnUsers.setOnClickListener {
-            filterUsers = !filterUsers
-            applyFilter()
+            isUserFilterOn = !isUserFilterOn
+            updateResults()
         }
 
         searchEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable?) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                applyFilter()
+                currentStringSearch = s.toString()
+                updateResults()
             }
         })
     }

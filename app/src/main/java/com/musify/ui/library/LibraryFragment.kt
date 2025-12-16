@@ -16,15 +16,15 @@ class LibraryFragment : Fragment() {
     private var _binding: FragmentLibraryBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var adapter: PlaylistAdapter
+    private lateinit var adapter: PlaylistResultAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentLibraryBinding.inflate(inflater, container, false)
 
-        adapter = PlaylistAdapter(
-            LibraryDataSource.items, { item ->
+        adapter = PlaylistResultAdapter(
+            PlaylistDataSource.items, { item ->
                 Toast.makeText(
                     requireContext(), "Has clicat: ${item.title}", Toast.LENGTH_SHORT
                 ).show()
@@ -36,7 +36,7 @@ class LibraryFragment : Fragment() {
         searchInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 adapter.updateList(
-                    LibraryDataSource.items.filter { item ->
+                    PlaylistDataSource.items.filter { item ->
                         item.title.contains(s.toString(), true) || item.owner.contains(
                             s.toString(), true
                         )

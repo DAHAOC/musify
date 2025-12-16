@@ -9,7 +9,7 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/searchResultImage"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:contentDescription="@string/search_image_content_descriptor"
@@ -22,12 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/image"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toTopOf="@id/image">
+        app:layout_constraintBottom_toBottomOf="@id/searchResultImage"
+        app:layout_constraintStart_toEndOf="@id/searchResultImage"
+        app:layout_constraintTop_toTopOf="@id/searchResultImage">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/searchResultTitle"
             style="@style/MusifyBodyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             tools:text="Track Title" />
 
         <TextView
-            android:id="@+id/subtitle"
+            android:id="@+id/searchResultSubtitle"
             style="@style/MusifySmallText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

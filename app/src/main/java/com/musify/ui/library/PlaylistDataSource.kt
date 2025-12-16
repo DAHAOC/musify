@@ -1,20 +1,20 @@
 package com.musify.ui.library
 
-import com.musify.model.PlaylistItem
+import com.musify.model.PlaylistResult
 
-object LibraryDataSource {
-    val items: List<PlaylistItem> = listOf(
-        PlaylistItem(
+object PlaylistDataSource {
+    val items: List<PlaylistResult> = listOf(
+        PlaylistResult(
             1,
             "Un Verano Sin Ti",
             "User",
             "https://i.scdn.co/image/ab67616d0000b27349d694203245f241a1bcaa72"
-        ), PlaylistItem(
+        ), PlaylistResult(
             2,
             "DtMF",
             "Bad Bunny",
             "https://images.genius.com/3b00c9850faf570161794846d22e0611.1000x1000x1.png"
-        ), PlaylistItem(
+        ), PlaylistResult(
             3,
             "Donde quiero estar",
             "Quevedo",

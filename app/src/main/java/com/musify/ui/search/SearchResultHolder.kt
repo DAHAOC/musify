@@ -1,0 +1,50 @@
+package com.musify.ui.search
+
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.musify.R
+import com.musify.model.SearchResult
+import com.musify.model.SearchResultType
+
+class SearchResultHolder(
+    itemView: View, private val onItemClick: (SearchResult) -> Unit
+) : RecyclerView.ViewHolder(itemView) {
+    private val searchTitle: TextView = itemView.findViewById(R.id.searchResultTitle)
+    private val searchImage: ImageView = itemView.findViewById(R.id.searchResultImage)
+    private val searchSubtitle: TextView = itemView.findViewById(R.id.searchResultSubtitle)
+
+    fun bind(item: SearchResult) {
+        searchTitle.text = item.title
+        searchSubtitle.text = when (item.type) {
+            SearchResultType.USER -> itemView.context.getString(R.string.user)
+            SearchResultType.TRACK -> String.format(
+                "%s, %s",
+                itemView.context.getString(R.string.track),
+                item.subtitle,
+            )
+        }
+
+        if (item.type == SearchResultType.USER) {
+            Glide.with(itemView.context)
+                .load(item.imageUrl)
+                .placeholder(R.drawable.playlist_placeholder)
+                .circleCrop()
+                .into(searchImage)
+        } else {
+            Glide.with(itemView.context)
+                .load(item.imageUrl)
+                .placeholder(R.drawable.playlist_placeholder)
+                .transform(RoundedCorners(16))
+                .into(searchImage)
+        }
+
+
+        itemView.setOnClickListener {
+            onItemClick(item)
+        }
+    }
+}
