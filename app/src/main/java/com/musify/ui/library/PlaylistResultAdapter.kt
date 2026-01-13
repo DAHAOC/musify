@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.musify.R
 import com.musify.model.PlaylistResult
 
+// Adapter encargado de mostrar la lista de Playlists en el RecyclerView.
 class PlaylistResultAdapter(
     private var items: List<PlaylistResult>, private val onItemClick: (PlaylistResult) -> Unit
 ) : RecyclerView.Adapter<PlaylistResultHolder>() {

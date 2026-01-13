@@ -57,13 +57,13 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // RecyclerView
-    implementation("androidx.recyclerview:recyclerview:1.3.1")
+    implementation(libs.androidx.recyclerview)
 
     // Splash Screen
     implementation("androidx.core:core-splashscreen:1.2.0")
 
     // Glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.glide)
     kapt("com.github.bumptech.glide:compiler:4.16.0")
 
 }

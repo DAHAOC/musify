@@ -1,4 +1,4 @@
-package com.musify.ui.library
+package com.musify.ui.user
 
 import android.view.View
 import android.widget.ImageView
@@ -10,16 +10,14 @@ import com.musify.R
 import com.musify.model.PlaylistResult
 
 // ViewHolder encargado de enlazar la información de un PlaylistResult.
-class PlaylistResultHolder(
+class UserPlaylistsHolder(
     itemView: View, private val onItemClick: (PlaylistResult) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
-    private val playlistTitle: TextView = itemView.findViewById(R.id.title)
-    private val playlistOwner: TextView = itemView.findViewById(R.id.owner)
-    private val playlistImage: ImageView = itemView.findViewById(R.id.image)
+    private val playlistTitle: TextView = itemView.findViewById(R.id.itemUserPlaylistTitle)
+    private val playlistImage: ImageView = itemView.findViewById(R.id.itemUserPlaylistImage)
 
     fun bind(item: PlaylistResult) {
         playlistTitle.text = item.title
-        playlistOwner.text = item.owner
 
         Glide.with(itemView.context).load(item.imageUrl).centerCrop()
             .placeholder(R.drawable.playlist_placeholder).transform(RoundedCorners(16))

@@ -1,4 +1,4 @@
-package com.musify.ui.library
+package com.musify.ui.common
 
 import com.musify.model.PlaylistResult
 
@@ -19,6 +19,16 @@ object PlaylistDataSource {
             "Donde quiero estar",
             "Quevedo",
             "https://i.scdn.co/image/ab67616d00001e02d53036b726a5a5a1cda5e891"
+        ), PlaylistResult(
+            4,
+            "Buenas Noches",
+            "Quevedo",
+            "https://i.scdn.co/image/ab67616d0000b2734b690afba75a356fcdad526e"
+        ), PlaylistResult(
+            5,
+            "Cuarto Azul",
+            "Aitana",
+            "https://i1.sndcdn.com/artworks-AUPByI3yQ31Y7Ewk-zcL9mQ-t1080x1080.png"
         )
     )
 }

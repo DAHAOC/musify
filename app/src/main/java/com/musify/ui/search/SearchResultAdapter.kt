@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.musify.R
 import com.musify.model.SearchResult
 
+// Adapter encargado de mostrar la lista de resultados de búsqueda en el RecyclerView.
 class SearchResultAdapter(
     private var items: List<SearchResult>, private val onItemClick: (SearchResult) -> Unit
 ) : RecyclerView.Adapter<SearchResultHolder>() {

@@ -39,21 +39,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchEditText">
 
-        <Button
-            android:id="@+id/btnSongs"
-            style="@style/MusifyPrimaryButton"
+        <CheckBox
+            android:id="@+id/checkBoxSongs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkable="true"
+            android:checked="true"
             android:text="@string/tracks" />
 
-        <Button
-            android:id="@+id/btnUsers"
-            style="@style/MusifyPrimaryButton"
+        <CheckBox
+            android:id="@+id/checkBoxUsers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:layout_marginStart="8dp"
-            android:checkable="true"
             android:text="@string/users" />
     </LinearLayout>
 

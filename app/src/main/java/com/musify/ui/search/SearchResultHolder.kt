@@ -10,6 +10,7 @@ import com.musify.R
 import com.musify.model.SearchResult
 import com.musify.model.SearchResultType
 
+// ViewHolder encargado de enlazar la información de un SearchResult.
 class SearchResultHolder(
     itemView: View, private val onItemClick: (SearchResult) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
@@ -29,16 +30,11 @@ class SearchResultHolder(
         }
 
         if (item.type == SearchResultType.USER) {
-            Glide.with(itemView.context)
-                .load(item.imageUrl)
-                .placeholder(R.drawable.playlist_placeholder)
-                .circleCrop()
-                .into(searchImage)
+            Glide.with(itemView.context).load(item.imageUrl)
+                .placeholder(R.drawable.playlist_placeholder).circleCrop().into(searchImage)
         } else {
-            Glide.with(itemView.context)
-                .load(item.imageUrl)
-                .placeholder(R.drawable.playlist_placeholder)
-                .transform(RoundedCorners(16))
+            Glide.with(itemView.context).load(item.imageUrl)
+                .placeholder(R.drawable.playlist_placeholder).transform(RoundedCorners(16))
                 .into(searchImage)
         }
 

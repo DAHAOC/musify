@@ -4,8 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.musify.R
 import com.musify.databinding.FragmentUserBinding
+import com.musify.ui.common.PlaylistDataSource
 
 class UserFragment : Fragment() {
 
@@ -20,6 +25,44 @@ class UserFragment : Fragment() {
         val root: View = binding.root
 
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val userPlaylistsAdapter = UserPlaylistsAdapter(
+            PlaylistDataSource.items,
+            { searchResult ->
+                Toast.makeText(
+                    view.context,
+                    searchResult.title,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        )
+        val userPlaylists: RecyclerView = view.findViewById(R.id.fragmentUserHorizontalPlaylists)
+        userPlaylists.adapter = userPlaylistsAdapter
+        userPlaylists.layoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+
+        val userTracksAdapter = UserTracksAdapter(
+            TrackDataSource.items,
+            { searchResult ->
+                Toast.makeText(
+                    view.context,
+                    searchResult.title,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        )
+        val userTracks: RecyclerView = view.findViewById(R.id.fragmentUserHorizontalTracks)
+        userTracks.adapter = userTracksAdapter
+        userTracks.layoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
     }
 
     override fun onDestroyView() {
