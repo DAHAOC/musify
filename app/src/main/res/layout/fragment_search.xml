@@ -13,14 +13,15 @@
         android:layout_height="wrap_content"
         android:text="@string/search_musify_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"/>
 
     <EditText
         android:id="@+id/search_input"
         style="@style/MusifyEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:autofillHints=""
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="10dp"
