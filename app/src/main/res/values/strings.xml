@@ -4,8 +4,10 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="username">Usuario</string>
+    <string name="username">Nombre de usuario</string>
     <string name="password">Contraseña</string>
+    <string name="type_your_username">Escribe tu nombre de usuario</string>
+    <string name="type_your_password">Escribe tu contraseña</string>
     <string name="repeat_password">Repite la contraseña</string>
 
     <string name="log_in">Iniciar sesión</string>
