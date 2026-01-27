@@ -10,11 +10,13 @@
     <string name="type_your_password">Escribe tu contraseña</string>
     <string name="repeat_password">Repite la contraseña</string>
 
-    <string name="log_in">Iniciar sesión</string>
-    <string name="log_in_musify">Inicia sesión en Musify</string>
+    <string name="welcome_to_musify">¡Bienvenido a Musify! Tu música, donde quieras y cuando quieras.</string>
 
-    <string name="sign_up">Registrarse</string>
-    <string name="sign_up_in_musify">Regístrate en Musify</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="login_welcome_back">¡Nos alegra verte de nuevo!</string>
+
+    <string name="signup">Registrarse</string>
+    <string name="signup_in_musify">¡Hola! Regístrate y empieza a usar la app.</string>
 
     <string name="you_already_have_account">¿Ya tienes una cuenta?</string>
     <string name="you_dont_have_account">¿No tienes cuenta?</string>

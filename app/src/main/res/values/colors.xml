@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#323232</color>
-    <color name="primary_variant">#323232</color>
-    <color name="on_primary">#FFFFFF</color>
+    <color name="primary">#f7f8f9</color>
+    <color name="primary_variant">#eff1f6</color>
+    <color name="on_primary">#000000</color>
 
-    <color name="secondary">#90CAF9</color>
+    <color name="secondary">#1e232c</color>
     <color name="secondary_variant">#64B5F6</color>
-    <color name="on_secondary">#000000</color>
+    <color name="on_secondary">#FFFFFF</color>
 
     <color name="background">#FFFFFF</color>
-    <color name="surface">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
     <color name="on_surface">#323232</color>
 
-    <color name="hint">#BABABA</color>
+    <color name="hint">#9ba7b3</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.musify
+package com.musify.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,13 +13,18 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.registerButton.setOnClickListener {
+        binding.signupButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
         binding.loginButton.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+        }
+
+        binding.goBackButton.setOnClickListener {
+            val intent = Intent(this, LandingActivity::class.java)
+            startActivity(intent)
         }
     }
 }

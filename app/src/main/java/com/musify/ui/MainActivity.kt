@@ -1,10 +1,11 @@
-package com.musify
+package com.musify.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.musify.R
 import com.musify.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

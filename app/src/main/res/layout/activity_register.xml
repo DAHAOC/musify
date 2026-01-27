@@ -5,129 +5,96 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <TextView
-        style="@style/MusifyHeaderText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/page_padding"
-        android:text="@string/sign_up_in_musify"
+    <ImageButton
+        android:id="@+id/go_back_button"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/go_back_button_background"
+        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/loginLayout"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/welcome_text"
+        style="@style/MusifyHeaderText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"
+        android:text="@string/signup_in_musify"
+        app:layout_constraintStart_toStartOf="@+id/go_back_button"
+        app:layout_constraintTop_toBottomOf="@+id/go_back_button" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/username_input"
+        style="@style/MusifyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="18dp"
+        android:hint="@string/type_your_username"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/username_label"
-                style="@style/MusifyBodyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/layout_item_margin_medium"
-                android:labelFor="@id/username"
-                android:text="@string/username" />
-
-            <EditText
-                android:id="@+id/username"
-                style="@style/MusifyEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:drawableStart="@drawable/ic_person"
-                android:drawablePadding="10dp"
-                android:hint="@string/type_your_username"
-                android:inputType="text" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/password_label"
-                style="@style/MusifyBodyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/layout_item_margin_medium"
-                android:labelFor="@id/password"
-                android:text="@string/password" />
-
-            <EditText
-                android:id="@+id/password"
-                style="@style/MusifyEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="password"
-                android:drawableStart="@drawable/ic_lock"
-                android:drawablePadding="10dp"
-                android:hint="@string/type_your_password"
-                android:inputType="textPassword" />
-
-            <EditText
-                android:layout_marginTop="@dimen/layout_item_margin_big"
-                android:id="@+id/repeat_password"
-                style="@style/MusifyEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="password"
-                android:drawableStart="@drawable/ic_lock"
-                android:drawablePadding="10dp"
-                android:hint="@string/repeat_password"
-                android:inputType="textPassword" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/register_button"
-            style="@style/MusifyPrimaryButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/sign_up" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/bottomLayout"
-        android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password_input"
+        style="@style/MusifyEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:hint="@string/type_your_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_input" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/confirm_password_input"
+        style="@style/MusifyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:hint="@string/repeat_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signup_button"
+        style="@style/MusifySecondaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="18dp"
+        android:text="@string/signup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_password_input" />
+
+    <TextView
+        android:id="@+id/bottom_text"
+        style="@style/MusifyBodyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_already_have_account"
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_marginBottom="8dp"/>
 
-        <TextView
-            style="@style/MusifyBodyText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/you_already_have_account" />
-
-        <Button
-            android:id="@+id/login_button"
-            style="@style/MusifyTransparentTextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/log_in"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/login_button"
+        style="@style/MusifyTransparentTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
