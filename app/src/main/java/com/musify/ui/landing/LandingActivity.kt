@@ -9,8 +9,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.musify.R
 import com.musify.databinding.ActivityLandingBinding
-import com.musify.ui.login.LoginActivity
-import com.musify.ui.register.RegisterActivity
+import com.musify.ui.signin.SignInActivity
+import com.musify.ui.signup.SignUpActivity
 
 class LandingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLandingBinding
@@ -31,13 +31,13 @@ class LandingActivity : AppCompatActivity() {
             insets
         }
 
-        binding.loginButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+        binding.signInButton.setOnClickListener {
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
 
-        binding.signupButton.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+        binding.signUpButton.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }

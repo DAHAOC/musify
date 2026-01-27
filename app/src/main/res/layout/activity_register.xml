@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/signup_button"
+        android:id="@+id/sign_up_button"
         style="@style/MusifySecondaryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,12 +83,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/you_already_have_account"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/sign_in_button"
         style="@style/MusifyTransparentTextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
