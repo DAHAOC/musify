@@ -102,4 +102,9 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:letterSpacing">0.05</item>
     </style>
+
+    <style name="BottomNavIndicator">
+        <item name="android:shape">oval</item>
+        <item name="android:color">#FF0000</item>
+    </style>
 </resources>
