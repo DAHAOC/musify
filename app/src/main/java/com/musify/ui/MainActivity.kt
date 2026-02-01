@@ -2,9 +2,10 @@ package com.musify.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.musify.R
 import com.musify.databinding.ActivityMainBinding
 
@@ -16,6 +17,20 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val originalPaddingStart = binding.root.paddingTop
+        val originalPaddingTop = binding.root.paddingTop
+        val originalPaddingEnd = binding.root.paddingEnd
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(
+                originalPaddingStart + systemBars.left,
+                originalPaddingTop + systemBars.top,
+                originalPaddingEnd + systemBars.right,
+                0
+            )
+            insets
+        }
 
         val navView = binding.navView
 
