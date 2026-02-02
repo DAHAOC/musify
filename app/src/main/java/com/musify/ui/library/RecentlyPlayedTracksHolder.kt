@@ -22,7 +22,7 @@ class RecentlyPlayedTracksHolder(
 
         val radius = itemView.context.resources.getDimensionPixelSize(R.dimen.radius_large)
         Glide.with(itemView.context).load(item.imageUrl).centerCrop()
-            .placeholder(R.drawable.playlist_placeholder).transform(RoundedCorners(radius))
+            .placeholder(R.drawable.img_playlist_placeholder).transform(RoundedCorners(radius))
             .into(trackImage)
 
         itemView.setOnClickListener {

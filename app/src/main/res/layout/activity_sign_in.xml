@@ -11,7 +11,7 @@
         android:id="@+id/go_back_button"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:background="@drawable/go_back_button_background"
+        android:background="@drawable/bg_go_back_button"
         android:contentDescription="@string/go_back_button_content_descriptor"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"

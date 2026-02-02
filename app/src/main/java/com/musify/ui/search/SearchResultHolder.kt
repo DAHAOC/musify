@@ -31,11 +31,11 @@ class SearchResultHolder(
 
         if (item.type == SearchResultType.USER) {
             Glide.with(itemView.context).load(item.imageUrl)
-                .placeholder(R.drawable.playlist_placeholder).circleCrop().into(searchImage)
+                .placeholder(R.drawable.img_playlist_placeholder).circleCrop().into(searchImage)
         } else {
             val radius = itemView.context.resources.getDimensionPixelSize(R.dimen.radius_large)
             Glide.with(itemView.context).load(item.imageUrl)
-                .placeholder(R.drawable.playlist_placeholder).transform(RoundedCorners(radius))
+                .placeholder(R.drawable.img_playlist_placeholder).transform(RoundedCorners(radius))
                 .into(searchImage)
         }
 

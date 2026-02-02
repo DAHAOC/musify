@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/ShapeAppearance.Musify.ImageRounded"
-        tools:background="@drawable/playlist_placeholder" />
+        tools:background="@drawable/img_playlist_placeholder" />
 
     <TextView
         android:id="@+id/track_title"
