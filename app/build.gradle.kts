@@ -1,8 +1,10 @@
 import com.android.build.api.dsl.ApplicationExtension
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.android.application)
     id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.android)
 }
 
 configure<ApplicationExtension> {
@@ -57,4 +59,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_11
+    }
 }
