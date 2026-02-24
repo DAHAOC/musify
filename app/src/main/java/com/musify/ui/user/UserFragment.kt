@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.musify.R
 import com.musify.databinding.FragmentUserBinding
+import com.musify.ui.MainActivity
 import com.musify.ui.common.HorizontalSpaceItemDecoration
 
 class UserFragment : Fragment() {
@@ -69,6 +70,10 @@ class UserFragment : Fragment() {
         Glide.with(requireContext()).load(userImage).centerCrop()
             .placeholder(R.drawable.ic_person)
             .transform(RoundedCorners(R.dimen.radius_medium)).into(binding.userIcon)
+
+        binding.userIcon.setOnClickListener {
+            (requireActivity() as MainActivity).openDrawer()
+        }
     }
 
     override fun onDestroyView() {
