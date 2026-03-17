@@ -22,4 +22,10 @@
         android:name="com.musify.ui.user.UserFragment"
         android:label="@string/user"
         tools:layout="@layout/fragment_user" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.musify.ui.user.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

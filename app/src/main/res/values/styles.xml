@@ -39,6 +39,11 @@
         <item name="cornerSize">@dimen/radius_large</item>
     </style>
 
+    <style name="ShapeAppearance.Musify.ImageCircular" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
     <!-- Filled Button -->
     <style name="Widget.Musify.Button.Filled" parent="Widget.Material3.Button">
         <item name="android:paddingVertical">@dimen/button_padding_vertical_small</item>
